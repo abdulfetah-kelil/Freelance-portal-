@@ -1,13 +1,12 @@
 const express=require('express');
-const routes=require('./router/routers.js');
+const routes=require('./router/orderRouter.js');
 
-
-// creating express application by
+// creating express application
 const app= express();
 
 app.use(routes);
 // port number 
-const port=4000;
+const port=4004;
 
 // i have created the express application then the express app should be listening on port
 app.listen(port,()=>{
