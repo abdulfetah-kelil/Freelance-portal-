@@ -1,10 +1,24 @@
 const express=require('express');
-const routes=require('./router/orderRouter.js');
+
+const authenticationRoutes=require('./router/authentic');
+const conversationRoutes=require('./router/conversation');
+const messageRoutes=require('./router/message');
+const orderRoutes=require('./router/order');
+const professionRoutes=require('./router/profession');
+const reviewRoutes=require('./router/review');
+const userRoutes=require('./router/user');
+
 
 // creating express application
 const app= express();
 
-app.use(routes);
+app.use(authenticationRoutes);
+app.use(conversationRoutes);
+app.use(messageRoutes);
+app.use(orderRoutes);
+app.use(professionRoutes);
+app.use(reviewRoutes);
+app.use(userRoutes);
 // port number 
 const port=4004;
 
