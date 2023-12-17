@@ -1,6 +1,6 @@
 const express=require('express');
 
-const authenticationRoutes=require('./router/authentic');
+const authenticationRoutes=require('./router/authentication');
 const conversationRoutes=require('./router/conversation');
 const messageRoutes=require('./router/message');
 const orderRoutes=require('./router/order');

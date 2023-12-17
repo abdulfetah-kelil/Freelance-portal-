@@ -1,20 +1,15 @@
 const express=require('express');
+const { messFirst, messCreate, messUpdate, messDeleted } = require('../controller/messageCon');
 // creating express application
 const app= express();
 const routes= express.Router();
-routes.get('/api/message', (req, res) => {
-    res.status(200).json({message: 'message'});
-})
 
-routes.post('/api/message', (req, res) => {
-    res.status(200).json({message: 'message created'});
-})
+routes.get('/api/message', messFirst);
 
-routes.put('/api/message', (req, res) => {
-    res.status(200).json({message: 'message updated'});
-})
+routes.post('/api/message', messCreate);
 
-routes.delete('/api/message', (req, res) => {
-    res.status(200).json({message: 'authentication deleted'});
-})
-module.exports =routes;
+routes.put('/api/message', messUpdate);
+
+routes.delete('/api/message', messDeleted);
+
+module.exports = routes;

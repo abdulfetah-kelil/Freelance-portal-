@@ -1,21 +1,15 @@
 const express=require('express');
+const { conFirst, conCreate, conUpdate, conDelete } = require('../controller/conversationCon');
 // creating express application
 const app= express();
 const routes= express.Router();
 
-routes.get('/api/conversation', (req, res) => {
-    res.status(200).json({message: 'conversation'});
-})
+routes.get('/api/conversation', conFirst);
 
-routes.post('/api/conversation', (req, res) => {
-    res.status(200).json({message: 'conversation created'});
-})
+routes.post('/api/conversation', conCreate);
 
-routes.put('/api/conversation', (req, res) => {
-    res.status(200).json({message: 'conversation updated'});
-})
+routes.put('/api/conversation', conUpdate);
 
-routes.delete('/api/conversation', (req, res) => {
-    res.status(200).json({message: 'profession deleted'});
-})
-module.exports =routes;
+routes.delete('/api/conversation', conDelete);
+
+module.exports = routes;

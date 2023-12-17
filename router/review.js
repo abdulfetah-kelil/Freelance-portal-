@@ -1,20 +1,14 @@
 const express=require('express');
+const { reviewFirst, reviewCreate, reviewUpdate, reviewDelete } = require('../controller/reviewCon');
 // creating express application
 const app= express();
 const routes= express.Router();
-routes.get('/api/review', (req, res) => {
-    res.status(200).json({message: 'review'});
-})
+routes.get('/api/review', reviewFirst);
 
-routes.post('/api/review', (req, res) => {
-    res.status(200).json({message: 'review created'});
-})
+routes.post('/api/review', reviewCreate);
 
-routes.put('/api/review', (req, res) => {
-    res.status(200).json({message: 'review updated'});
-})
+routes.put('/api/review', reviewUpdate);
 
-routes.delete('/api/review', (req, res) => {
-    res.status(200).json({message: 'review deleted'});
-})
+routes.delete('/api/review', reviewDelete);
+
 module.exports =routes;
