@@ -11,6 +11,7 @@ const userRoutes=require('./router/user');
 
 // creating express application
 const app= express();
+const dotenv = require("dotenv").config();
 
 app.use(authenticationRoutes);
 app.use(conversationRoutes);
@@ -20,7 +21,7 @@ app.use(professionRoutes);
 app.use(reviewRoutes);
 app.use(userRoutes);
 // port number 
-const port=4004;
+const port = process.env.PORT_NUMBER||3000;
 
 // i have created the express application then the express app should be listening on port
 app.listen(port,()=>{
