@@ -7,11 +7,11 @@ const orderRoutes=require('./router/order');
 const professionRoutes=require('./router/profession');
 const reviewRoutes=require('./router/review');
 const userRoutes=require('./router/user');
-
+const dotenv = require("dotenv").config();
 
 // creating express application
 const app= express();
-const dotenv = require("dotenv").config();
+app.use(express.json());
 
 app.use(authenticationRoutes);
 app.use(conversationRoutes);
