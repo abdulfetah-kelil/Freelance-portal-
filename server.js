@@ -7,6 +7,7 @@ const orderRoutes=require('./router/order');
 const professionRoutes=require('./router/profession');
 const reviewRoutes=require('./router/review');
 const userRoutes=require('./router/user');
+const errorHandler = require('./middleware/errorHandler');
 const dotenv = require("dotenv").config();
 
 // creating express application
@@ -20,6 +21,7 @@ app.use(orderRoutes);
 app.use(professionRoutes);
 app.use(reviewRoutes);
 app.use(userRoutes);
+app.use(errorHandler);
 // port number 
 const port = process.env.PORT_NUMBER||3000;
 
