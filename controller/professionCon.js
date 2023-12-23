@@ -1,17 +1,19 @@
-const profFirst = (req, res) => {
+const asyncHandler = require('express-async-handler');
+
+const profFirst = (async (req, res) => {
     res.status(200).json({message: 'here is profession'});
-}
+});
 
-const profCreate = (req, res) => {
+const profCreate = (async (req, res) => {
     res.status(200).json({message: 'profession created'});
-}
+});
 
-const profUpdate = (req, res) => {
+const profUpdate = (async (req, res) => {
     res.status(200).json({message: 'profession updated'});
-}
+});
 
-const profDelete = (req, res) => {
+const profDelete = (async (req, res) => {
     res.status(200).json({message: 'profession deleted'});
-}
+});
 
 module.exports = { profFirst, profCreate, profUpdate, profDelete };

@@ -1,17 +1,19 @@
-const messFirst = (req, res) => {
+const asyncHandler = require('express-async-handler');
+
+const messFirst = (async(req, res) => {
     res.status(200).json({message: 'here is message'});
-}
+});
 
-const messCreate = (req, res) => {
+const messCreate = (async(req, res) => {
     res.status(200).json({message: 'message created'});
-}
+});
 
-const messUpdate = (req, res) => {
+const messUpdate = (async(req, res) => {
     res.status(200).json({message: 'message updated'});
-}
+});
 
-const messDeleted = (req, res) => {
+const messDeleted = (async(req, res) => {
     res.status(200).json({message: 'message deleted'});
-}
+});
 
 module.exports = { messFirst, messCreate, messUpdate, messDeleted };
